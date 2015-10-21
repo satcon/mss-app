@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+	PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+
+	<settings>
+		<setting name="lazyLoadingEnabled" value="false" />
+		<setting name="autoMappingBehavior" value="FULL"/>
+		<setting name="defaultStatementTimeout" value="30"/>
+	</settings>
+	
+	<typeAliases>
+		<typeAlias type="com.mss.model.SysMenu" alias="sysMenu"/>
+	</typeAliases>
+	
+	<mappers>
+		<mapper resource="sqlmap/SysMenuMapper.xml"/>
+	</mappers>
+	
+</configuration>

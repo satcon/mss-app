@@ -1,0 +1,47 @@
+<script type="text/javascript">
+var layout_west_tree_url = sysbp + '/sys/menu/findTreeMenus';
+var rootNode; // 根节点-首页
+var menuTree = $('#menu-tree').tree();
+
+ menuTree.tree({
+	url : layout_west_tree_url,
+	lines : true,
+	onBeforeLoad : function(node, params) {
+		if (layout_west_tree_url) { //只有刷新页面才会执行这个方法
+			parent.$.messager.progress({
+				title : '提示',
+				text : '数据处理中，请稍后....'
+			});
+	    }
+	},
+	onLoadSuccess : function (node, data) {
+		// 加载数据成功后触发该事件
+		parent.$.messager.progress('close');
+		rootNode = $(this).tree('getRoot');
+	},
+	onLoadError : function(args) {
+		// 加载数据异常后触发该事件
+		console.info(args);
+	},
+	onClick : function(node) {
+		
+		if((node.id == rootNode.id) || $(this).tree('isLeaf', node.target)) {// 点击根节点或叶子节点
+			addTab(node); // 增加一个新tab页
+		} // END IF
+	}
+}); // END tree
+</script>
+
+
+<div class="easyui-panel" data-options="title:'导航',fit:true,border:false">
+    <div class="easyui-accordion" data-options="fit:true,border:false">
+        <div title="系统菜单">
+             <ul id="menu-tree"></ul>
+        </div>
+        
+        <div title="其他">
+        </div>
+         
+    </div>
+ 
+</div>
