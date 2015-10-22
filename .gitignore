@@ -3,3 +3,8 @@ target
 *.project
 *.gitignore
 *.classpath
+
+# Package Files #
+*.jar
+*.war
+*.ear
