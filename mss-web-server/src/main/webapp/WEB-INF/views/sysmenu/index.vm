@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<body>
+<script type="text/javascript" charset="utf-8">
+var tgSysmenu;
+$(function(){
+	tgSysmenu = $('#tg-sysmenu').treegrid({
+		url :  sys.basePath() + '/sys/menu/findMenus',
+	    fit : true,
+	    fitColumns : false,
+	    striped : true,
+	    border : false,
+	    lines: true,
+	    idField : 'id',
+	    treeField : 'menuName',
+	    pagination : false,
+	    singleSelect : true,
+	    columns : [[
+	                {field:'id', title:'主键', hidden: true},
+	                {field:'parentId', title:'父节点', hidden: true},
+	                {field:'menuName',title:'菜单名称', width:250},
+	                {field:'iconCls',title:'图标', width:60, align:'center', formatter:viewMenuIcon},
+	                {field:'menuURL',title:'菜单链接', width:250},
+	                {field:'sortOrder',title:'排序',width:60,align:'center'}
+	          ]],
+	    onLoadSuccess : function(row, data) {
+        },
+        onLoadError : function() {
+        	console.info('---->【加载失败！】');
+        }
+}); // END datagrid
+
+}); // END jQuery
+
+function viewMenuIcon(value, rows, index) {
+	return '<span class="tree-folder ' + value + '"></span>';
+}
+</script>
+    <table id="tg-sysmenu"></table>
+</body>

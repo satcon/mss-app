@@ -1,13 +1,13 @@
 package com.jd.mss.controller;
 
 import java.util.List;
-
-import javax.annotation.Resource;
 import javax.servlet.http.HttpServletResponse;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-
 import com.mss.common.BaseController;
 import com.mss.model.SysMenu;
 import com.mss.service.SysMenuService;
@@ -16,6 +16,9 @@ import com.mss.service.SysMenuService;
 @RequestMapping("/sys/menu")
 public class SysMenuController extends BaseController{
 	
+	private static final Logger logger = LoggerFactory.getLogger(SysMenuController.class);
+	
+	@Autowired
 	private SysMenuService sysMenuService;
 	
 	
@@ -27,15 +30,7 @@ public class SysMenuController extends BaseController{
 	
 	@RequestMapping("viewMenus")
 	public String viewMenus() throws Exception {
-		return "menu/index";
-	}
-
-	public SysMenuService getSysMenuService() {
-		return sysMenuService;
-	}
-
-	@Resource
-	public void setSysMenuService(SysMenuService sysMenuService) {
-		this.sysMenuService = sysMenuService;
+		logger.info("---【系统菜单】");
+		return "sysmenu/index";
 	}
 }
