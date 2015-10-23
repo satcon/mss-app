@@ -24,6 +24,11 @@ public class SysMenuController extends BaseController{
 		List<SysMenu> list = sysMenuService.findAllMenus();
 		writeJson(response, list);
 	}
+	
+	@RequestMapping("viewMenus")
+	public String viewMenus() throws Exception {
+		return "menu/index";
+	}
 
 	public SysMenuService getSysMenuService() {
 		return sysMenuService;
