@@ -10,7 +10,7 @@ CREATE TABLE `sys_users` (
   `CREATE_TIME` timestamp NULL default NULL on update CURRENT_TIMESTAMP,
   `UPDATE_TIME` timestamp NULL default NULL,
   PRIMARY KEY  (`user_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of sys_users
