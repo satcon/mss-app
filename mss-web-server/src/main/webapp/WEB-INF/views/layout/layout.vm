@@ -1,6 +1,4 @@
-<!DOCTYPE HTML>
-<html>
-<body class="easyui-layout">
+<div class="easyui-layout" data-options="fit:true">
     <!-- 北部 -->
 	<div data-options="region:'north'" style="height: 50px;"></div>
 	
@@ -14,5 +12,4 @@
 
 	<!-- 中部   主显视区 -->
 	<div data-options="region:'center', href:'/static/frame/center.vm'" style="padding: 0px;overflow: hidden;"></div>
-</body>
-</html>
+</div>

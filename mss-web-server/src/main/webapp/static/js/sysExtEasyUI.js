@@ -10,12 +10,13 @@ $(function(){
 	$.parser.parse(window.document);
 	window.setTimeout(function() {
 		$.messager.progress('close');
+		
 		if (self != parent) {
 			window.setTimeout(function() {
 				try {
 					parent.$.messager.progress('close');
 				} catch (e) {
-					
+
 				}
 			}, 500);
 		}

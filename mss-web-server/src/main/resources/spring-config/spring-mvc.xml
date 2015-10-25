@@ -102,9 +102,10 @@
 		<property name="exceptionMappings">
 			<props>
 				<!-- <prop key="com.jd.common.hrm.IllegalHrmPrivilegeException">error/access-denied</prop> -->
-				<prop key="org.springframework.web.multipart.MaxUploadSizeExceededException">error/uncaught</prop>
-				<prop key="java.lang.RuntimeException">error/uncaught</prop>
-				<prop key="java.lang.Exception">error/uncaught</prop>
+				<prop key="org.springframework.web.multipart.MaxUploadSizeExceededException">error/404</prop>
+				<prop key="jave.sql.SQLException">error/uncaught</prop>
+				<prop key="java.lang.RuntimeException">error/404</prop>
+				<prop key="java.lang.Exception">error/404</prop>
 			</props>
 		</property>
 	</bean>

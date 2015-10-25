@@ -1,0 +1,11 @@
+<script type="text/javascript" src="#springUrl('')/static/js/jquery-easyui-1.4.3/jquery.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="#springUrl('')/static/js/jquery-easyui-1.4.3/jquery.easyui.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="#springUrl('')/static/js/jquery-easyui-1.4.3/locale/easyui-lang-zh_CN.js" charset="utf-8"></script>
+
+<script type="text/javascript" src="#springUrl('')/static/js/sysUtils.js" charset="utf-8"></script>
+<script type="text/javascript" src="#springUrl('')/static/js/sysExtEasyUI.js" charset="utf-8"></script>
+
+<link rel="stylesheet" type="text/css" href="#springUrl('')/static/js/jquery-easyui-1.4.3/themes/default/easyui.css"></link>
+<link rel="stylesheet" type="text/css" href="#springUrl('')/static/js/jquery-easyui-1.4.3/themes/icon.css"></link>
+<link rel="stylesheet" type="text/css" href="#springUrl('')/static/js/jquery-easyui-1.4.3/themes/color.css"></link>
+<link rel="stylesheet" type="text/css" href="#springUrl('')/static/js/sysExt.css"></link>

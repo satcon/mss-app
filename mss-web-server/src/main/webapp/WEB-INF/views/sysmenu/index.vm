@@ -1,6 +1,3 @@
-<!DOCTYPE HTML>
-<body>
-<!--#parse("#springUrl('')/common/inc.vm")-->
 <script type="text/javascript" charset="utf-8">
 var tgSysmenu;
 $(document).ready(function(){
@@ -36,5 +33,5 @@ function viewMenuIcon(value, rows, index) {
 	return '<span class="tree-folder ' + value + '"></span>';
 }
 </script>
-    <table id="tg-sysmenu"></table>
-</body>
+
+<table id="tg-sysmenu"></table>
