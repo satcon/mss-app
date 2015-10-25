@@ -1,8 +1,9 @@
 <!DOCTYPE HTML>
 <body>
+#parse("#springUrl('')/common/inc.vm")
 <script type="text/javascript" charset="utf-8">
 var tgSysmenu;
-$(function(){
+$(document).ready(function(){
 	tgSysmenu = $('#tg-sysmenu').treegrid({
 		url :  sys.basePath() + '/sys/menu/findMenus',
 	    fit : true,

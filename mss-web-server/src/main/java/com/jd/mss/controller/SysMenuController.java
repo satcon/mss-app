@@ -21,16 +21,27 @@ public class SysMenuController extends BaseController{
 	@Autowired
 	private SysMenuService sysMenuService;
 	
+	@RequestMapping("viewMenus")
+	public String viewMenus() throws Exception {
+		logger.info("---【系统菜单】");
+		return "sysmenu/index";
+	}
+	
+	@RequestMapping("findMenus")
+	public void findMenus(HttpServletResponse response) throws Exception {
+		try {
+			logger.info("【findMenus】");
+			writeJson(response, sysMenuService.findAllMenus());
+		} catch (Exception e) {
+			logger.error("->异常： {}", e);
+			throw e;
+		}
+	}
+	
 	
 	@RequestMapping("findTreeMenus")
 	public void findTreeMenus(HttpServletResponse response) throws Exception {
 		List<SysMenu> list = sysMenuService.findAllMenus();
 		writeJson(response, list);
-	}
-	
-	@RequestMapping("viewMenus")
-	public String viewMenus() throws Exception {
-		logger.info("---【系统菜单】");
-		return "sysmenu/index";
 	}
 }
