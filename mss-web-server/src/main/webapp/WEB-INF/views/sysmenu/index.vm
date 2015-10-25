@@ -1,11 +1,11 @@
 <!DOCTYPE HTML>
 <body>
-#parse("#springUrl('')/common/inc.vm")
+<!--#parse("#springUrl('')/common/inc.vm")-->
 <script type="text/javascript" charset="utf-8">
 var tgSysmenu;
 $(document).ready(function(){
 	tgSysmenu = $('#tg-sysmenu').treegrid({
-		url :  sys.basePath() + '/sys/menu/findMenus',
+		url : sys.basePath() + '/sys/menu/findMenus',
 	    fit : true,
 	    fitColumns : false,
 	    striped : true,

@@ -368,12 +368,10 @@ $.fn.treegrid.defaults.loadFilter = function(data, parentId) {
 	if(!data) {
 		return null;
 	}
-	
-	var rows = data.rows;
 
-	function exists(rows, parentId) {
-		for (var i = 0; i < rows.length; i++) {
-			if (rows[i].id == parentId)
+	function exists(data, parentId) {
+		for (var i = 0; i < data.length; i++) {
+			if (data[i].id == parentId)
 				return true;
 		}
 		return false;
@@ -381,9 +379,9 @@ $.fn.treegrid.defaults.loadFilter = function(data, parentId) {
 
 	var nodes = [];
 	// get the top level nodes
-	for (var i = 0; i < rows.length; i++) {
-		var row = rows[i];
-		if (!exists(rows, row.parentId)) {
+	for (var i = 0; i < data.length; i++) {
+		var row = data[i];
+		if (!exists(data, row.parentId)) {
 			nodes.push(row);
 		}
 	}
@@ -396,8 +394,8 @@ $.fn.treegrid.defaults.loadFilter = function(data, parentId) {
 	while (toDo.length) {
 		var node = toDo.shift(); // the parent node
 		// get the children nodes
-		for (var i = 0; i < rows.length; i++) {
-			var row = rows[i];
+		for (var i = 0; i < data.length; i++) {
+			var row = data[i];
 			if (row.parentId == node.id) {
 				
 				var child = row;
