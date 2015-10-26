@@ -124,7 +124,7 @@
 	<!-- 找不到页错误转向 -->
 	<error-page>
 		<error-code>404</error-code>
-		<location>/WEB-INF/views/error/404.vm</location>
+		<location>/error/notFound</location>
 	</error-page>
 	<!-- 系统内部错误转向 -->
 	<error-page>
