@@ -1,6 +1,7 @@
 <script type="text/javascript" charset="UTF-8">
    var centerTabs = $('#centerTabs');
    var _url;
+   var ret;
    
    function addTab(node) {
 	   if (centerTabs.tabs('exists', node.text)) {
@@ -13,12 +14,12 @@
 			   });
 			   
 			   _url = sysbp + '/' + node.attributes.url;
-			   var iframe = '<iframe src="' + _url + '" frameborder="0" style="border:0;width:100%;height:100%;"></iframe>';
-			   
+			   var iframe_content = '<iframe src="' + _url + '" scrolling="no" frameborder="0" style="border:0;width:100%;height:99%;overflow:hidden;"></iframe>';
+			   <!--var div_content = '<div style="padding:10px;width:100%;height:100%;overflow:hidden"> <a href="' + _url + '"></a></div>';-->
 			   centerTabs.tabs('add', {
 				   title : node.text,
 				   closable : true,
-				   content : iframe,
+				   content : iframe_content,
 				   border : false,
 				   fit : true,
 				   iconCls : node.iconCls,
@@ -46,11 +47,36 @@
 	   });
 	   
    }
+
+   function checkJvmMemory() {
+	   $.ajax({
+		   type : 'post',
+		   url : '/checkJvmMemory',
+		   dataType : 'json',
+		   success : function(data){
+			   $('#max').html('Max Memory : ' + data.maxMemory + 'M');
+			   $('#total').html('Total Memory : ' + data.totalMemory + 'M');
+			   $('#free').html('Free Memory : ' + data.freeMemory + 'M');
+		   },
+		   error : function () {
+		   },
+		   complete : function(XMLHttpRequest, textStatus) {
+		   }
+	   });
+   }
+
+   $(function(){
+	     setInterval(checkJvmMemory, 1000);
+   });
 </script>
 <div id="centerTabs" class="easyui-tabs" data-options="border:false,fit:true" style="overflow: hidden;">
-    <div title="首页" data-options="iconCls:'icon-home'" style="padding: 10px 10px 0px 10px;">
-      <div class="easyui-panel" data-options="border:false" style="height: 100px;min-width: 1145px;">
-          <div title=" " class="easyui-panel" data-options="fit:true"></div>
+    <div title="首页" data-options="iconCls:'icon-home'" style="background:#ececf0; padding: 10px 10px 0px 10px;">
+      <div id="memroyPanel" class="easyui-panel" data-options="border:false" style="height: 200px;min-width: 1145px;">
+          <div title=" " class="easyui-panel" data-options="fit:true" style="padding: 10px 10px 0px 10px;">
+             <h2><span id='max'></span></h2>
+             <h2><span id='total'></span></h2>
+             <h2><span id='free'></span></h2>
+          </div>
       </div>
       
       <div class="easyui-panel" data-options="border:false" style="margin-top:20px;height: 100px;min-width: 1145px;">

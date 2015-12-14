@@ -4,7 +4,7 @@ $(document).ready(function(){
 	tgSysmenu = $('#tg-sysmenu').treegrid({
 		url : sys.basePath() + '/sys/menu/findMenus',
 	    fit : true,
-	    fitColumns : false,
+	    fitColumns : true,
 	    striped : true,
 	    border : false,
 	    lines: true,
@@ -34,4 +34,4 @@ function viewMenuIcon(value, rows, index) {
 }
 </script>
 
-<table id="tg-sysmenu"></table>
+<div id="tg-sysmenu" style="padding:10px;"></div>

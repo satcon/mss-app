@@ -15,7 +15,7 @@ public class BaseController {
 		// 使用SerializerFeature.WriteDateUseDateFormat特性来序列化日期格式的类型为yyyy-MM-dd hh24:mi:ss
 		// 使用SerializerFeature.DisableCircularReferenceDetect特性关闭引用检测和生成
 		String json = JSON.toJSONString(object, SerializerFeature.WriteDateUseDateFormat, SerializerFeature.DisableCircularReferenceDetect);
-		logger.info("转换后的JSON字符串：" + json);
+		logger.debug("转换后的JSON字符串：" + json);
 		response.setContentType("text/html;charset=utf-8");
 		response.setCharacterEncoding("UTF-8");
 		response.getWriter().write(json);

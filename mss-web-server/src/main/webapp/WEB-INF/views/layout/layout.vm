@@ -8,7 +8,7 @@
 	<!-- <div data-options="region:'east',collapsed:true,collapsible:true,title:'信息'" style="width: 200px;"></div> -->
 	
 	<!-- 西部 -->
-	<div data-options="region:'west',split:false, href:'/static/frame/west.vm'" style="width: 200px;"></div>
+	<div data-options="region:'west',split:true, href:'/static/frame/west.vm'" style="width: 200px;"></div>
 
 	<!-- 中部   主显视区 -->
 	<div data-options="region:'center', href:'/static/frame/center.vm'" style="padding: 0px;overflow: hidden;"></div>
